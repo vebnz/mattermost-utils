@@ -4,6 +4,8 @@ from urlparse import urlunsplit
 
 import requests
 import logging
+
+from flask import url_for
 from flask.ext.restful import Resource, reqparse
 
 from run import app, api
@@ -55,12 +57,12 @@ class NewGiphyPost(Resource):
             slash_command = False
             response = {}
             response['username'] = app.config['GIPHY_BOT_USERNAME']
-            response['icon_url'] = app.config['GIPHY_BOT_ICON_URL']
+            response['icon_url'] = url_for('static', filename=app.config['GIPHY_BOT_ICON_URL'], _external=True)
 
             args = self.parser.parse_args()
             pprint(app.config)
 
-            if args['token'] != app.config['MATTERMOST_GIPHY_TOKEN']:
+            if args['token'] not in app.config['MATTERMOST_GIPHY_TOKEN']:
                 raise Exception(
                     'Tokens did not match, it is possible that this request came from somewhere other than Mattermost')
 
