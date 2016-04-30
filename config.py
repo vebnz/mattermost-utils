@@ -11,7 +11,7 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    PORT = 5055
+    PORT = 5000
     SECRET_KEY = 'XNV1Hm5zvOrFvEST0A0fb8972v+yIrnRR27V~3*+DG4y48`H1I,o;;tm[6>PACu'
 
     GIPHY_BOT_USERNAME = 'giphy'
