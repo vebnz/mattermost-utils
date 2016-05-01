@@ -60,7 +60,6 @@ class NewGiphyPost(Resource):
             response['icon_url'] = url_for('static', filename=app.config['GIPHY_BOT_ICON_URL'], _external=True)
 
             args = self.parser.parse_args()
-            pprint(app.config)
 
             if args['token'] not in app.config['MATTERMOST_GIPHY_TOKEN']:
                 raise Exception(

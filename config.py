@@ -21,7 +21,14 @@ class DevelopmentConfig(Config):
 
     GIPHY_API_KEY = os.environ.get('GIPHY_API_KEY', 'dc6zaTOxFJmzC')
 
-    MATTERMOST_GIPHY_TOKEN = ['1iih9fzu3p88pmhka4hctdtnjh', '4mau9wgdr3bgux3ck3m1nbq6jo']
+    MATTERMOST_GIPHY_TOKEN = ['1iih9fzu3p88pmhka4hctdtnjh', 'i5tyfc316pdfjmawbcpk3wt1or']
+
+    GITHUB_BOT_USERNAME = 'github'
+    GITHUB_BOT_ICON_URL = 'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png'
+
+    MATTERMOST_WEBHOOK_URLS = {
+        'default': ("http://actualbrain.com:8065/hooks/ej8jcebawtbwtecpoe6kqzywja", "town-square"),
+    }
 
 
 config = {
